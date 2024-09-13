@@ -1,74 +1,109 @@
+Here's the README file with specific instructions for installing the required modules using `pip`:
 
-# Chatbot of your choice
+# Langchain Demo with Mixtral API
 
 ## Overview
 
-This repository contains a chatbot developed using the Ollama model LLaMA2, Streamlit, and LangChain. The chatbot is designed to help monitor and analyze costs efficiently, providing actionable insights and facilitating better decision-making.
+This Streamlit application demonstrates how to integrate the Mixtral API with the Langchain framework to provide a chat interface and analytics dashboard. The app uses the `ChatGroq` model for generating responses and performs text analysis using SpaCy.
 
 ## Features
 
-- **Ollama LLaMA2 Model:** Utilizes the powerful LLaMA2 model for natural language understanding and generation.
-- **Streamlit Interface:** Provides an intuitive and interactive web interface for user interaction with the chatbot.
-- **LangChain Integration:** Leverages LangChain for advanced language model interactions and workflow management.
-- **Cost Monitoring:** Specifically tailored to help monitor and analyze cost-related data.
+- **Chat Interface**: Ask questions and get instant responses from the Mixtral API.
+- **Chat History**: View previous interactions in the chat history.
+- **Analytics Dashboard**: Analyze response times and text statistics, including word count and stop words.
 
 ## Installation
 
-### Prerequisites
+Follow these steps to set up the project:
 
-- Python 3.7 or later
-- Git
-
-### Steps
-
-1. **Clone the Repository:**
+1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/libberaj/my_Gen_AI
-   cd repository-name
+   git clone <repository-url>
+   cd <repository-directory>
    ```
 
-2. **Create and Activate a Virtual Environment:**
+2. **Create a Virtual Environment**
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. **Install Dependencies:**
+3. **Install Required Modules**
+
+   Install the required Python packages using `pip`:
 
    ```bash
-   pip install -r requirements.txt
+   pip install streamlit plotly pandas spacy python-dotenv langchain-groq langchain-core
    ```
 
-4. **Set Up Environment Variables:**
+4. **Download SpaCy Model**
 
-   Create a `.env` file in the root directory and add any necessary environment variables (e.g., API keys).
-
-5. **Run the Application:**
+   Download the SpaCy English model `en_core_web_sm`:
 
    ```bash
-   streamlit run app.py
+   python -m spacy download en_core_web_sm
    ```
 
-## Usage
+5. **Set Up Environment Variables**
 
-1. Open your web browser and navigate to `http://localhost:8501` to access the chatbot interface.
-2. Interact with the chatbot to monitor and analyze cost-related data.
-3. Use the provided features to get insights and generate reports.
+   Create a `.env` file in the project root and add your GROQ API key:
 
-## Contributing
+   ```dotenv
+   GROQ_API_KEY=your_groq_api_key_here
+   ```
 
-Feel free to open issues or submit pull requests if you have suggestions or improvements. Please make sure to follow the contribution guidelines.
+   Replace `your_groq_api_key_here` with your actual GROQ API key.
+
+## Running the Application
+
+Run the Streamlit application using the following command:
+
+```bash
+streamlit run app.py
+```
+
+Where `app.py` is the filename of your Streamlit script.
+
+## Code Overview
+
+- **Imports**: The script imports necessary libraries and modules.
+- **Environment Variables**: Loaded from `.env` file and used to configure the API key.
+- **SpaCy Model**: Loaded for text processing and analysis.
+- **Streamlit Interface**: Contains two main pages:
+  - **Chat**: For interacting with the Mixtral API and viewing chat history.
+  - **Show Analytics**: For displaying analytics related to response times and text statistics.
+
+## Modules to Download
+
+Here are the modules you need to install for this project:
+
+- **`streamlit`**: For creating the web app interface.
+- **`plotly`**: For interactive plots and charts.
+- **`pandas`**: For data manipulation and analysis.
+- **`spacy`**: For natural language processing tasks.
+- **`python-dotenv`**: For loading environment variables from a `.env` file.
+- **`langchain-groq`**: For interacting with the Mixtral API.
+- **`langchain-core`**: For prompt templates and output parsing.
+
+## Getting GROQ API Key
+
+To obtain a GROQ API key, follow these steps:
+
+1. **Sign Up**: Go to the [GROQ website](https://groq.com/) and sign up for an account.
+2. **API Key**: Once logged in, navigate to the API section of your account dashboard.
+3. **Generate Key**: Follow the instructions to generate and copy your API key.
+4. **Add Key**: Paste your API key into the `.env` file as described above.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
+## Acknowledgments
 
-- **Ollama LLaMA2 Model:** For its advanced language capabilities.
-- **Streamlit:** For providing a simple way to build interactive web apps.
-- **LangChain:** For enhancing language model interactions.
+- **Langchain**: For providing the framework to integrate with language models.
+- **Mixtral API**: For offering advanced conversational AI capabilities.
+- **SpaCy**: For powerful natural language processing tools.
+- **Plotly**: For creating interactive visualizations.
 
----
