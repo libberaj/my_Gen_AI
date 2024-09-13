@@ -1,5 +1,5 @@
 
-# Chatbotof your choice
+# Chatbot of your choice
 
 ## Overview
 
